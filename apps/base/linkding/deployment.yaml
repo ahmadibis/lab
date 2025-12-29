@@ -18,6 +18,15 @@ spec:
           volumeMounts:
             - mountPath: "/etc/linkding/data"
               name: linking-data
+          securityContext:
+            runAsNonRoot: true
+            runAsUser: 1000            
+            runAsGroup: 3000           
+            allowPrivilegeEscalation: false 
+            readOnlyRootFilesystem: true  
+            capabilities:
+              drop:
+              - ALL 
           ports:
             - containerPort: 9090
       volumes:

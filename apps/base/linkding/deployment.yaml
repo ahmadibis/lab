@@ -20,14 +20,10 @@ spec:
               name: linking-data
           securityContext:
             runAsNonRoot: true
-            runAsUser: 18        
-            runAsGroup: 18
-            fsGroup: 18           
+            runAsUser: 33        
+            runAsGroup: 33
+            fsGroup: 33           
             allowPrivilegeEscalation: false 
-            readOnlyRootFilesystem: true  
-            capabilities:
-              drop:
-              - ALL 
           ports:
             - containerPort: 9090
       volumes:

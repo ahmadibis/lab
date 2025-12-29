@@ -16,7 +16,7 @@ spec:
         - name: linkding
           image: ghcr.io/sissbruecker/linkding:1.44.2-plus-alpine
           volumeMounts:
-            - mountPath: "/app/linkding-data"
+            - mountPath: "/etc/linkding/data"
               name: linking-data
           ports:
             - containerPort: 9090

@@ -15,5 +15,12 @@ spec:
       containers:
         - name: linkding
           image: ghcr.io/sissbruecker/linkding:1.44.2-plus-alpine
+          volumeMounts:
+            - mountPath: "/app/linkding-data"
+              name: linking-data
           ports:
             - containerPort: 9090
+      volumes:
+       - name: linking-data
+         persistentVolumeClaim:
+           claimName: linking-data

@@ -21,7 +21,8 @@ spec:
           securityContext:
             runAsNonRoot: true
             runAsUser: 18        
-            runAsGroup: 3000           
+            runAsGroup: 18
+            fsGroup: 18           
             allowPrivilegeEscalation: false 
             readOnlyRootFilesystem: true  
             capabilities:

@@ -20,7 +20,7 @@ spec:
               name: linking-data
           securityContext:
             runAsNonRoot: true
-            runAsUser: 1000            
+            runAsUser: 18        
             runAsGroup: 3000           
             allowPrivilegeEscalation: false 
             readOnlyRootFilesystem: true  

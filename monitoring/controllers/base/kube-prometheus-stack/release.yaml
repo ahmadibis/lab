@@ -28,3 +28,9 @@ spec:
   values:
     grafana:
       adminPassword: mischa
+      enabled: true
+      ingress:
+        enabled: true
+        className: "traefik" 
+        hosts:
+          - grafana.lanre-home.com

@@ -30,7 +30,6 @@ spec:
             - mountPath: "/etc/linkding/data"
               name: linking-data
           securityContext:
-            runAsNonRoot: true
             runAsUser: 33        
             runAsGroup: 33
             fsGroup: 33           

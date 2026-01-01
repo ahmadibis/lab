@@ -12,10 +12,10 @@ spec:
       labels:
         app: linkding
     spec:
-      # securityContext:
-      #   fsGroup: 33           
-      #   runAsUser: 33           
-      #   runAsGroup: 33  
+      securityContext:
+        fsGroup: 33           
+        runAsUser: 33           
+        runAsGroup: 33  
       containers:
         - name: linkding
           image: ghcr.io/sissbruecker/linkding:1.44.2-plus-alpine
@@ -25,8 +25,8 @@ spec:
           volumeMounts:
             - mountPath: "/etc/linkding/data"
               name: linking-data
-          # securityContext:       
-          #   allowPrivilegeEscalation: false 
+          securityContext:       
+            allowPrivilegeEscalation: false 
           ports:
             - containerPort: 9090
       volumes:

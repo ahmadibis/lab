@@ -15,6 +15,17 @@ spec:
       containers:
         - name: linkding
           image: ghcr.io/sissbruecker/linkding:1.44.2-plus-alpine
+          env:
+          - name: LD_SUPERUSER_NAME 
+            valueFrom:
+              secretKeyRef:
+                name: linkding-user-auth
+                key: username
+          - name: LD_SUPERUSER_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: linkding-user-auth
+                key: password
           volumeMounts:
             - mountPath: "/etc/linkding/data"
               name: linking-data

@@ -34,3 +34,7 @@ spec:
         className: "traefik" 
         hosts:
           - grafana.lanre-home.com
+        tls:
+         - secretName: grafana-tls-secret
+           hosts:
+            - grafana.lanre-home.com

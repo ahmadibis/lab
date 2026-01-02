@@ -22,6 +22,9 @@ spec:
           envFrom:
           - secretRef:
               name: linkding-container-env
+          env: 
+            - name: LD_CSRF_TRUSTED_ORIGINS
+              value: https://lds.lanre-home.com
           volumeMounts:
             - mountPath: "/etc/linkding/data"
               name: linking-data

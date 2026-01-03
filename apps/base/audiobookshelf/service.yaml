@@ -8,4 +8,4 @@ spec:
       targetPort: 3005
   selector:
     app: audiobookshelf
-  type: LoadBalancer
+  type: ClusterIP

@@ -6,3 +6,7 @@ resources:
   - deployment.yaml
   - service.yaml
   - audiobookshelf-configmap.yaml
+  - audiobookshelf-storage.yaml
+  - config-storage.yaml
+  - metadata-storage.yaml
+  - podcasts-storage.yaml

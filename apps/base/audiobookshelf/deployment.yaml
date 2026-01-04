@@ -38,7 +38,7 @@ spec:
               name:  audiobookshelf-configdata
             - mountPath: "/app/metadata" 
               name: audiobookshelf-metadata
-        
+      restartPolicy: Always
       volumes:
         - name: audiobooks-data
           persistentVolumeClaim:

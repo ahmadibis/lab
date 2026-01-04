@@ -27,23 +27,23 @@ spec:
           volumeMounts:
             - mountPath: "/app/audiobooks" 
               name: audiobooks-data
-            # - mountPath: "/podcasts" 
-            #   name: podcasts-data
-            # - mountPath: "/config" 
-            #   name:  audiobookshelf-configdata
-            # - mountPath: "/metadata" 
-            #   name: audiobookshelf-metadata
+            - mountPath: "/app/podcasts" 
+              name: podcasts-data
+            - mountPath: "/app/config" 
+              name:  audiobookshelf-configdata
+            - mountPath: "/app/metadata" 
+              name: audiobookshelf-metadata
         
       volumes:
         - name: audiobooks-data
           persistentVolumeClaim:
             claimName: audiobooks-data
-        # - name: podcasts-data
-        #   persistentVolumeClaim:
-        #     claimName: podcasts-data
-        # - name:  audiobookshelf-configdata
-        #   persistentVolumeClaim:
-        #     claimName:  audiobookshelf-configdata
-        # - name: audiobookshelf-metadata
-        #   persistentVolumeClaim:
-        #     claimName: audiobookshelf-metadata
+        - name: podcasts-data
+          persistentVolumeClaim:
+            claimName: podcasts-data
+        - name:  audiobookshelf-configdata
+          persistentVolumeClaim:
+            claimName:  audiobookshelf-configdata
+        - name: audiobookshelf-metadata
+          persistentVolumeClaim:
+            claimName: audiobookshelf-metadata

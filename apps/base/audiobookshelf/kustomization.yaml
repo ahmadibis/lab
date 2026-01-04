@@ -7,3 +7,4 @@ resources:
   - service.yaml
   - audiobookshelf-configmap.yaml
   - audiobooks-storage.yaml
+  - ingress.yaml

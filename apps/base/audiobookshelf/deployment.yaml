@@ -16,25 +16,25 @@ spec:
         app: audiobookshelf
     spec:
       containers:
-      - name: audiobookshelf
-        image: ghcr.io/advplyr/audiobookshelf:2.32.1
-        ports:
-        - containerPort: 3005
-        envFrom: 
-          - configMapRef:
-              name:  audiobookshelf-configmap
+        - name: audiobookshelf
+          image: ghcr.io/advplyr/audiobookshelf:2.32.1
+          ports:
+            - containerPort: 3005
+          envFrom: 
+            - configMapRef:
+                name:  audiobookshelf-configmap
+          
+          volumeMounts:
+            - mountPath: "/audiobooks" 
+              name: audiobooks-data
+            - mountPath: "/podcasts" 
+              name: podcasts-data
+            - mountPath: "/config" 
+              name:  audiobookshelf-configdata
+            - mountPath: "/metadata" 
+              name: audiobookshelf-metadata
         
-        volumeMounts:
-          - mountPath: "/audiobooks" 
-            name: audiobooks-data
-          - mountPath: "/podcasts" 
-            name: podcasts-data
-          - mountPath: "/config" 
-            name:  audiobookshelf-configdata
-          - mountPath: "/metadata" 
-            name: audiobookshelf-metadata
-      
-      volume:
+      volumes:
         - name: audiobooks-data
           persistentVolumeClaim:
             claimName: audiobooks-data
